@@ -1,0 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "menu_column_Bt8nEF": {
+          "type": "menu_column",
+          "settings": {
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "menu_column_Bt8nEF"
+      ],
+      "settings": {
+        "heading": "Join our Youtube community",
+        "subtext": "Join our thriving community of yoga enthusiasts, adventure seekers, and soulful practitioners who understand that yoga is not just an exercise, but a way of life. Unlock the door to an online sanctuary that nurtures your mind, body, and spirit, wherever you are in the world.",
+        "button_link": "https://www.youtube.com/yogatoday",
+        "button_text": "YouTube Premium",
+        "enable_animation": true,
+        "animation_json_url": "https://uploads-ssl.webflow.com/649c2309433fb54b2b5ba65c/653133425eecab59ac1150c4_yoga-footer.json",
+        "footer_logo": "shopify://shop_images/footer_logo.svg",
+        "footer_tagline": "Premium online yoga classes for inner calm  and outer radiance.",
+        "copyright_text": "All Rights Reserved.",
+        "facebook_link": "https://www.facebook.com/YogaTodayOnline/",
+        "twitter_link": "https://twitter.com/YogaToday",
+        "instagram_link": "https://www.instagram.com/yogatoday/",
+        "pinterest_link": "https://www.pinterest.com/yogatodaypins/",
+        "youtube_link": "https://www.youtube.com/user/yogatoday",
+        "linkedin_link": "",
+        "tiktok_link": "",
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 20
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

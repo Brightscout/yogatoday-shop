@@ -1,0 +1,325 @@
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+<div class="footer">
+  <div class="footer-content">
+    <div class="footer-heading">
+      <div class="footer-info">
+        <h2 class="footer-title h2">{{ section.settings.heading }}</h2>
+        <p class="footer-info-text">{{ section.settings.subtext }}</p>
+        {% if section.settings.button_link != blank %}
+          <a href="{{ section.settings.button_link }}" target="_blank" class="button is-small is-white w-inline-block">
+            <div class="btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23" fill="none">
+                <path d="M16.5 11.9375L9.5 7.4375L9 15.9375L16.5 11.9375Z" fill="white"/>
+                <path d="M22.9028 17.0642C22.6411 18.0473 21.8698 18.8218 20.8911 19.0845C19.1153 19.5625 11.9986 19.5625 11.9986 19.5625C11.9986 19.5625 4.88193 19.5625 3.10818 19.0849C2.12901 18.8221 1.35818 18.0477 1.09651 17.0647C0.621094 15.2826 0.621094 11.5652 0.621094 11.5652C0.621094 11.5652 0.621094 7.84728 1.09651 6.06566C1.35822 5.08257 2.12943 4.34057 3.10818 4.07786C4.88193 3.60024 11.9986 3.60024 11.9986 3.60024C11.9986 3.60024 19.1153 3.60024 20.8903 4.07786C21.8694 4.34061 22.6403 5.08257 22.9019 6.06566C23.3773 7.84769 23.3773 11.5652 23.3773 11.5652C23.3773 11.5652 23.3773 15.283 22.9019 17.0647L22.9028 17.0642ZM9.67359 8.18939V14.9401L15.6194 11.5643L9.67359 8.18897V8.18939Z" fill="#F0493C"/>
+              </svg>
+            </div>
+            <div class="button-text sign-in">{{ section.settings.button_text }}</div>
+          </a>
+        {% endif %}
+      </div>
+      <div id="footer-logo-wrap">
+        <div id="lottie-animation"></div>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <div class="footer-container">
+        <div class="footer-legend">
+          {% if section.settings.footer_logo != blank %}
+            <img src="{{ section.settings.footer_logo | img_url: 'master' }}" loading="lazy" alt="{{ shop.name }}" class="footer-legend-logo">
+          {% endif %}
+          <p class="footer-legend-text">{{ section.settings.footer_tagline }}</p>
+        </div>
+
+        <div class="footer-menu">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'menu_column' %}
+                <div class="footer-list">
+                  {% for link in block.settings.menu.links %}
+                    <a href="{{ link.url }}" class="footer-list-item nav-link">{{ link.title }}</a>
+                  {% endfor %}
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <div class="footer--copyright flex justify-center lg:justify-start">
+          <a href="/" class="footer--copyright-link">
+            © YogaToday {{ 'now' | date: '%Y' }}. {{ section.settings.copyright_text }}
+          </a>
+        </div>
+
+        <div class="footer--social">
+          {% if section.settings.facebook_link != blank %}
+            <a href="{{ section.settings.facebook_link }}" target="_blank" class="footer--social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.383545 12.067C0.383545 18.033 4.71655 22.994 10.3835 24V15.333H7.38354V12H10.3835V9.333C10.3835 6.333 12.3165 4.667 15.0505 4.667C15.9165 4.667 16.8505 4.8 17.7165 4.933V8H16.1835C14.7165 8 14.3835 8.733 14.3835 9.667V12H17.5835L17.0505 15.333H14.3835V24C20.0505 22.994 24.3835 18.034 24.3835 12.067C24.3835 5.43 18.9835 0 12.3835 0C5.78355 0 0.383545 5.43 0.383545 12.067Z" fill="white"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if section.settings.twitter_link != blank %}
+            <a href="{{ section.settings.twitter_link }}" target="_blank" class="footer--social-link" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20" fill="none">
+                <path d="M21.9154 5.05562C21.9307 5.27023 21.9307 5.48488 21.9307 5.69973C21.9307 12.2446 16.981 19.7899 7.93465 19.7899C5.1481 19.7899 2.55841 18.9773 0.383545 17.5669C0.779474 17.6128 1.16022 17.6282 1.57129 17.6282C3.87083 17.6282 5.98711 16.8463 7.67873 15.5128C5.51652 15.4668 3.70444 14.041 3.0801 12.0789C3.38468 12.1249 3.68897 12.1556 4.00911 12.1556C4.45069 12.1556 4.89218 12.0942 5.30325 11.987C3.04963 11.527 1.35942 9.53418 1.35942 7.16914V7.10785C2.01423 7.47577 2.77543 7.70571 3.58257 7.73638C2.25796 6.84737 1.38989 5.32935 1.38989 3.61268C1.38989 2.69299 1.63348 1.84976 2.05969 1.1141C4.48064 4.11853 8.12026 6.08294 12.2028 6.29528C12.1267 5.92736 12.081 5.54406 12.081 5.1609C12.081 2.43205 14.2737 0.210938 16.9979 0.210938C18.4139 0.210938 19.693 0.808802 20.5916 1.77473C21.7034 1.56012 22.7693 1.14619 23.7133 0.578999C23.3478 1.72896 22.571 2.69441 21.5511 3.30785C22.541 3.20059 23.5 2.92459 24.3835 2.54152C23.7137 3.52255 22.8761 4.39646 21.9167 5.10144L21.9154 5.05562Z" fill="white"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if section.settings.instagram_link != blank %}
+            <a href="{{ section.settings.instagram_link }}" target="_blank" class="footer--social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path d="M12.3836 5.73047C8.92144 5.73047 6.11499 8.53692 6.11499 11.9994C6.11499 15.4619 8.92173 18.2678 12.3836 18.2678C15.8456 18.2678 18.6523 15.4616 18.6523 11.9994C18.6523 8.5372 15.8461 5.73047 12.3836 5.73047ZM12.3836 16.0685C10.1363 16.0685 8.31458 14.2468 8.31458 11.9994C8.31458 9.75205 10.1363 7.93034 12.3836 7.93034C14.631 7.93034 16.453 9.75205 16.453 11.9994C16.453 14.2468 14.6313 16.0685 12.3836 16.0685Z" fill="white"/>
+                <path d="M17.5774 5.73139C17.5774 6.52255 18.2188 7.1645 19.0102 7.1645C19.8017 7.1645 20.4431 6.52255 20.4431 5.73139C20.4431 4.94022 19.8017 4.29883 19.0102 4.29883C18.2188 4.29883 17.5774 4.94022 17.5774 5.73139Z" fill="white"/>
+                <path d="M24.6296 7.05415C24.5852 2.9033 21.7652 0.119675 17.5664 0.0749381C16.5425 -0.0308285 8.5791 -0.0189539 7.55378 0.0749381C3.353 0.117742 0.536646 2.90495 0.491095 7.05415C0.516805 9.87478 -0.00913095 17.3215 1.05532 19.8605C3.3748 24.6793 6.93842 23.8581 12.5599 24C18.177 23.8611 21.7504 24.6744 24.0651 19.8605C25.1366 17.3458 24.6095 9.85158 24.6296 7.05387V7.05415ZM22.4468 16.8487C22.3926 18.0185 22.1947 18.6542 22.0285 19.0767C21.808 19.6371 21.5453 20.0364 21.1202 20.4561C20.6952 20.8762 20.2908 21.136 19.7241 21.3539C19.2962 21.5185 18.6532 21.7135 17.4697 21.7667C16.1892 21.8247 15.8053 21.8369 12.5627 21.8369C9.32022 21.8369 8.93652 21.8247 7.65634 21.7667C6.47256 21.7137 5.82954 21.5185 5.40197 21.3539C4.83495 21.136 4.43086 20.8762 4.00581 20.4561C3.58076 20.0364 3.31779 19.6368 3.0973 19.0767C2.93102 18.6542 2.73345 18.0185 2.67923 16.8487C2.62083 15.5834 2.60825 15.204 2.60825 12.0003C2.60825 8.79668 2.62083 8.41697 2.67923 7.15163C2.73345 5.98185 2.93102 5.3467 3.0973 4.92391C3.31779 4.36359 3.58076 3.964 4.00581 3.54425C4.43086 3.12449 4.83495 2.86436 5.40197 2.64675C5.82954 2.48244 6.47256 2.28692 7.65634 2.23363C8.93652 2.17591 9.32078 2.16376 12.5627 2.16376C15.8047 2.16376 16.189 2.17591 17.4697 2.23363C18.6532 2.2872 19.2962 2.48244 19.7241 2.64675C20.2911 2.86408 20.6952 3.12449 21.1202 3.54425C21.5453 3.964 21.808 4.36387 22.0285 4.92391C22.1947 5.3467 22.3926 5.98213 22.4468 7.15163C22.5052 8.41697 22.5172 8.7964 22.5172 12.0003C22.5172 15.2043 22.5052 15.5837 22.4468 16.8487Z" fill="white"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if section.settings.pinterest_link != blank %}
+            <a href="{{ section.settings.pinterest_link }}" target="_blank" class="footer--social-link" aria-label="Pinterest">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.39055 23.5289C9.32906 23.3039 9.56605 23.1569 9.66955 22.9724C10.466 21.5459 10.9145 19.5419 11.345 17.7045C11.498 17.64 11.6285 17.943 11.7875 18.105C12.257 18.5789 13.0565 19.0199 13.9805 19.1024C16.4824 19.3199 18.1864 17.9475 19.1674 16.5495C20.2069 15.0675 20.9433 13.1115 20.7633 10.4431C20.6193 8.30414 19.4809 6.67667 18.0889 5.61619C16.5979 4.47921 14.585 3.88522 12.185 4.09971C9.96504 4.30071 8.32407 5.1122 6.9561 6.37517C5.19513 8.00114 3.71616 11.6401 5.32113 14.514C5.50563 14.8425 5.79362 15.192 6.15961 15.51C6.38011 15.7035 6.9396 16.2225 7.35509 16.149C7.73009 16.0845 7.98658 14.928 7.95508 14.592C7.91158 14.157 7.36559 13.7475 7.1961 13.317C6.9426 12.6721 6.8946 12.2221 6.9561 11.3611C7.1016 9.33162 8.35257 7.57065 9.95004 6.73217C11.519 5.90868 14.102 5.64169 16.0144 6.89116C18.0049 8.19314 18.2794 11.1391 17.4124 13.794C16.9969 15.066 16.3879 16.218 15.2974 16.785C14.1065 17.4045 12.4415 16.872 12.1445 15.75C11.9285 14.9325 12.362 13.902 12.6215 13.0755C13.055 11.7151 13.781 9.49212 12.3425 8.84713C11.273 8.37014 10.184 9.17262 9.78955 9.84461C9.34856 10.5931 9.21956 11.6461 9.38905 12.6781C9.44905 13.035 9.69955 13.398 9.70855 13.755C9.71455 13.9935 9.54805 14.418 9.46855 14.7525C9.25706 15.6615 8.96156 16.7415 8.75157 17.625C8.33607 19.3889 7.89058 20.8319 7.95508 22.9304C7.70459 22.9724 7.47509 22.7924 7.27559 22.6919C5.69312 21.8744 4.22615 20.6744 3.16567 19.2599C1.96419 17.655 0.927711 15.5565 0.771714 13.0755C0.524219 9.08112 1.83369 6.26117 3.72516 4.09971C5.85962 1.65926 9.01706 -0.266705 13.82 0.0302896C17.2294 0.241786 20.0314 2.06425 21.7608 4.06071C23.6688 6.26267 24.9513 9.24912 24.7143 13.0755C24.5208 16.1985 23.0013 18.7379 21.2418 20.4974C19.4869 22.2539 17.0044 23.7719 13.8215 23.9669C12.1385 24.0718 10.7855 23.9279 9.39055 23.5289Z" fill="white"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if section.settings.youtube_link != blank %}
+            <a href="{{ section.settings.youtube_link }}" target="_blank" class="footer--social-link" aria-label="Youtube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="0 0 35 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M31.2508 0.712874C32.7294 1.12212 33.8911 2.28384 34.2871 3.74919C35 6.42907 35 12 35 12C35 12 35 17.5842 34.2871 20.2509C33.8779 21.7295 32.7162 22.8912 31.2508 23.2872C28.5841 24.0001 17.8646 24.0001 17.8646 24.0001C17.8646 24.0001 7.1583 24.0001 4.47842 23.2872C3.01307 22.878 1.85135 21.7163 1.45531 20.2509C0.742432 17.571 0.742432 12 0.742432 12C0.742432 12 0.742432 6.41587 1.45531 3.74919C1.85135 2.27064 3.01307 1.10892 4.47842 0.712874C7.1583 0 17.8646 0 17.8646 0C17.8646 0 28.5841 0 31.2508 0.712874ZM23.3443 11.9868L14.4466 17.1353V6.85143L23.3443 11.9868Z" fill="white"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if section.settings.linkedin_link != blank %}
+            <a href="{{ section.settings.linkedin_link }}" target="_blank" class="footer--social-link" aria-label="Linkedin">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6C0 2.68629 2.68629 0 6 0H18C21.3137 0 24 2.68629 24 6V18C24 21.3137 21.3137 24 18 24H6C2.68629 24 0 21.3137 0 18V6ZM19 10.5851C18.5642 9.09323 17.4572 8.39585 16.0864 8.39585C14.6451 8.39585 13.7555 9.23147 13.3996 9.78324H13.3462L13.2213 8.59114H10.8724C10.9748 10.7838 10.9635 12.9814 10.9521 15.1774C10.9485 15.8828 10.9448 16.588 10.945 17.2928H13.6493V12.2747C13.6493 12.0249 13.6846 11.7763 13.7561 11.5981C13.9338 11.1002 14.3782 10.5842 15.1259 10.5842C16.1045 10.5842 16.4956 11.3489 16.4956 12.4705V17.2928H19V10.5851ZM8.86485 6.17038C8.86485 6.91743 8.29603 7.52201 7.40649 7.52201C6.55161 7.52201 5.98279 6.91743 6.0004 6.17038C5.98279 5.38702 6.5516 4.80005 7.42353 4.80005C8.29602 4.80005 8.8478 5.38702 8.86485 6.17038ZM6.07192 17.2909V8.58978H8.77627V17.2909H6.07192Z" fill="white"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if section.settings.tiktok_link != blank %}
+            <a href="{{ section.settings.tiktok_link }}" target="_blank" class="footer--social-link" aria-label="TikTok">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.562933 2.69513C0 3.77882 0 5.20255 0 8.05V15.95C0 18.7975 0 20.2212 0.562933 21.3049C1.03731 22.2181 1.78191 22.9627 2.69513 23.4371C3.77882 24 5.20255 24 8.05 24H15.95C18.7975 24 20.2212 24 21.3049 23.4371C22.2181 22.9627 22.9627 22.2181 23.4371 21.3049C24 20.2212 24 18.7975 24 15.95V8.05C24 5.20255 24 3.77882 23.4371 2.69513C22.9627 1.78191 22.2181 1.03731 21.3049 0.562933C20.2212 0 18.7975 0 15.95 0H8.05C5.20255 0 3.77882 0 2.69513 0.562933C1.78191 1.03731 1.03731 1.78191 0.562933 2.69513ZM12.407 14.8417C12.407 16.3032 11.3248 17.2589 9.98981 17.2589C8.65482 17.2589 7.57259 16.1767 7.57259 14.8417C7.57259 13.6482 8.68425 12.5564 10.0303 12.6061C10.2946 12.6061 10.6048 12.669 10.7251 12.7115V9.93497C8.33383 9.45136 4.72339 11.43 4.72339 14.8417C4.72339 17.2589 6.58348 20 9.98981 20C13.3961 20 15.2977 17.2589 15.2977 14.8417V9.35059C15.8464 9.78561 17.4228 10.5695 19.2766 10.5695V7.8435C17.1089 7.88718 15.1434 5.97723 15.306 4H12.407V14.8417Z" fill="white"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if section.settings.enable_animation %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const animation = lottie.loadAnimation({
+      container: document.getElementById('lottie-animation'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      path: '{{ section.settings.animation_json_url }}'
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      trigger: '.footer',
+      start: 'top 80%',  // Changed from 30% to 80% to trigger earlier
+      once: true,        // Added to ensure it only plays once
+      onEnter: () => {
+        animation.goToAndPlay(0);  // Added to ensure animation starts from beginning
+      }
+    });
+  });
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Main Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join our Youtube community"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Join our thriving community of yoga enthusiasts"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "YouTube Premium"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "Enable Lottie Animation",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "animation_json_url",
+      "label": "Animation JSON URL"
+    },
+    {
+      "type": "header",
+      "content": "Footer Info"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "text",
+      "id": "footer_tagline",
+      "label": "Footer Tagline",
+      "default": "Premium online yoga classes"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "All Rights Reserved."
+    },
+    {
+      "type": "header",
+      "content": "Social Media Links"
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "twitter_link",
+      "label": "Twitter URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "pinterest_link",
+      "label": "Pinterest URL"
+    },
+    {
+      "type": "url",
+      "id": "youtube_link",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_link",
+      "label": "LinkedIn URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_link",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Margin",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal Padding",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu_column",
+      "name": "Menu Column",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer",
+      "blocks": [
+        {
+          "type": "menu_column"
+        },
+        {
+          "type": "menu_column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
