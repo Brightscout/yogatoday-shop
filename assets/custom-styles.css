@@ -1,0 +1,55 @@
+/* add custom font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap'); /* custom font import */
+
+.text-body {
+  font-family: 'Roboto Flex', serif; /* custom font */
+}
+
+/* slider - custom style */
+.slider
+  .product__media-item
+  .product-media-container
+  .media
+  > *:not(.zoom):not(.deferred-media__poster-button),
+.media model-viewer {
+  border-radius: 12px;
+}
+
+.slider .product-media-container.media-type-image {
+  border: none;
+}
+
+/* product details - info section */
+.product__info-wrapper .price-item.price-item--regular {
+  color: #414141;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 110% */
+  font-family: 'Roboto Flex';
+}
+
+.product__info-wrapper .product__title h1 {
+  color: #111111;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: 'Roboto Flex';
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 440;
+  line-height: 48px; /* 100% */
+  margin-bottop: 24px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.product__info-wrapper .price.price--large {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 30px;
+  margin-bottom: 38px;
+}
