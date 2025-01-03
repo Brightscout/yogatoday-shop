@@ -53,3 +53,69 @@
   padding-bottom: 30px;
   margin-bottom: 38px;
 }
+
+.product__info-wrapper .quantity__label.form__label {
+  color: #414141;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  margin-bottom: 30px;
+}
+
+.product__info-wrapper .price-per-item__container .quantity {
+  background: #f3f1eb;
+  border-radius: 6px;
+}
+
+.product__info-wrapper .price-per-item__container .quantity .quantity__button {
+  border-radius: 6px;
+}
+
+.product__info-wrapper .price-per-item__container .quantity:after {
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.product__info-wrapper .product-form__submit.button--secondary {
+  background: transparent;
+  border-radius: 200px;
+  border: 1px solid #000;
+  color: #111111;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: 'Roboto Flex';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 110% */
+}
+
+.product__info-wrapper .button:after {
+  box-shadow: none;
+}
+
+.product__info-wrapper .button:after {
+  border-radius: 200px;
+}
+
+.product__info-wrapper .shopify-payment-button__button {
+  color: #fff;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: 'Roboto Flex';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 8px;
+}
+
+.product__info-wrapper .shopify-payment-button__button,
+.product__info-wrapper .shopify-payment-button__button:after {
+  border-radius: 200px;
+}
