@@ -275,10 +275,20 @@
   align-items: center;
   justify-items: center;
   line-height: 16px;
+  width: 15px;
+  height: 15px;
 }
 
 .header__icon--cart .cart-count-bubble span {
-  margin-left: 1px;
+  margin-left: 2px;
+  margin-top: 1px;
+  color: #060606;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 7.385px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 11.077px */
 }
 
 /* Cart notification */
