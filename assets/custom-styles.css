@@ -418,57 +418,78 @@
   color: #000;
 }
 
-.title-wrapper-with-link .title.title--primary {
-  color: #111;
-  font-family: 'Roboto Flex';
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 440;
-  line-height: 48px; /* 100% */
-}
-
-.cart__contents .caption-with-letter-spacing {
-  color: #a0a0a0;
-  font-family: 'Roboto Flex';
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 22px; /* 110% */
-}
-
 .cart__contents .cart-items {
   margin-top: 70px;
 }
 
-.cart__contents .cart-items .cart-item__details .cart-item__name {
-  color: #414141;
-  font-family: 'Roboto Flex';
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 22px; /* 110% */
-}
-
-.cart__contents .cart-items .cart-item__details .product-option {
-  color: #414141;
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 24px */
-}
-
-.cart__contents .cart-items .cart-item .price {
-  color: #414141;
-  font-family: 'Roboto Flex';
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 440;
-  line-height: normal;
-}
-
 @media screen and (min-width: 750px) {
+  .title-wrapper-with-link .title.title--primary {
+    color: #111;
+    font-family: 'Roboto Flex';
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 440;
+    line-height: 48px; /* 100% */
+  }
+
+  .cart__contents .caption-with-letter-spacing {
+    color: #a0a0a0;
+    font-family: 'Roboto Flex';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 110% */
+    text-transform: capitalize;
+  }
+
+  .cart__contents .cart-items .cart-item__details .cart-item__name {
+    color: #414141;
+    font-family: 'Roboto Flex';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 110% */
+  }
+
+  .cart__contents .cart-items .cart-item__details .product-option {
+    color: #414141;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+
+  .cart__contents .cart-items .cart-item .price {
+    color: #414141;
+    font-family: 'Roboto Flex';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 440;
+    line-height: normal;
+  }
+
   .cart__contents .cart-items .cart-item__media {
     width: 195px;
+  }
+
+  .totals .totals__total-value,
+  .totals .totals__total {
+    color: #414141;
+    font-family: 'Roboto Flex';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 440;
+    line-height: normal;
+  }
+
+  .tax-note {
+    color: #414141;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
   }
 }
