@@ -422,10 +422,45 @@
   margin-top: 70px;
 }
 
+.title-wrapper-with-link .title.title--primary {
+  color: #111;
+  font-family: 'Roboto Flex';
+}
+
+.cart__contents .caption-with-letter-spacing {
+  color: #a0a0a0;
+  font-family: 'Roboto Flex';
+}
+
+.cart__contents .cart-items .cart-item__details .cart-item__name {
+  color: #414141;
+  font-family: 'Roboto Flex';
+}
+
+.cart__contents .cart-items .cart-item__details .product-option {
+  color: #414141;
+  font-family: Roboto;
+}
+
+.cart__contents .cart-items .cart-item .price {
+  color: #414141;
+  font-family: 'Roboto Flex';
+}
+
+.totals .totals__total-value,
+.totals .totals__total {
+  color: #414141;
+  font-family: 'Roboto Flex';
+}
+
+.tax-note {
+  color: #414141;
+  text-align: right;
+  font-family: Roboto;
+}
+
 @media screen and (min-width: 750px) {
   .title-wrapper-with-link .title.title--primary {
-    color: #111;
-    font-family: 'Roboto Flex';
     font-size: 48px;
     font-style: normal;
     font-weight: 440;
@@ -433,8 +468,6 @@
   }
 
   .cart__contents .caption-with-letter-spacing {
-    color: #a0a0a0;
-    font-family: 'Roboto Flex';
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -443,8 +476,6 @@
   }
 
   .cart__contents .cart-items .cart-item__details .cart-item__name {
-    color: #414141;
-    font-family: 'Roboto Flex';
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -452,8 +483,6 @@
   }
 
   .cart__contents .cart-items .cart-item__details .product-option {
-    color: #414141;
-    font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -461,8 +490,6 @@
   }
 
   .cart__contents .cart-items .cart-item .price {
-    color: #414141;
-    font-family: 'Roboto Flex';
     font-size: 24px;
     font-style: normal;
     font-weight: 440;
@@ -475,8 +502,6 @@
 
   .totals .totals__total-value,
   .totals .totals__total {
-    color: #414141;
-    font-family: 'Roboto Flex';
     font-size: 24px;
     font-style: normal;
     font-weight: 440;
@@ -484,9 +509,6 @@
   }
 
   .tax-note {
-    color: #414141;
-    text-align: right;
-    font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
