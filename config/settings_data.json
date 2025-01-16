@@ -394,7 +394,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "header[role=\"banner\"] {border: none;}"
+      "header[role=\"banner\"] {border: none; background: red !important;}"
     ]
   }
 }
