@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-cart" width="40" height="40" viewBox="0 0 40 40" fill="none">
-  <path d="M13.3334 14.6667H29.3334L27.3334 23.3333H15.3334M27.3334 26H16.0001L12.6667 12H10.6667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M26.0001 30.0007C26.7365 30.0007 27.3334 29.4037 27.3334 28.6673C27.3334 27.9309 26.7365 27.334 26.0001 27.334C25.2637 27.334 24.6667 27.9309 24.6667 28.6673C24.6667 29.4037 25.2637 30.0007 26.0001 30.0007Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M17.3333 30.0007C18.0697 30.0007 18.6667 29.4037 18.6667 28.6673C18.6667 27.9309 18.0697 27.334 17.3333 27.334C16.597 27.334 16 27.9309 16 28.6673C16 29.4037 16.597 30.0007 17.3333 30.0007Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-cart" viewBox="0 0 40 40"><path fill="currentColor" fill-rule="evenodd" d="M20.5 6.5a4.75 4.75 0 0 0-4.75 4.75v.56h-3.16l-.77 11.6a5 5 0 0 0 4.99 5.34h7.38a5 5 0 0 0 4.99-5.33l-.77-11.6h-3.16v-.57A4.75 4.75 0 0 0 20.5 6.5m3.75 5.31v-.56a3.75 3.75 0 1 0-7.5 0v.56zm-7.5 1h7.5v.56a3.75 3.75 0 1 1-7.5 0zm-1 0v.56a4.75 4.75 0 1 0 9.5 0v-.56h2.22l.71 10.67a4 4 0 0 1-3.99 4.27h-7.38a4 4 0 0 1-4-4.27l.72-10.67z"/></svg>
