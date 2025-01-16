@@ -1410,22 +1410,6 @@
     ]
   },
   {
-    "name": "Checkout Customization",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Custom Styles"
-      },
-      {
-        "type": "textarea",
-        "id": "checkout_custom_css",
-        "label": "Custom CSS",
-        "info": "Add your custom CSS for checkout page here",
-        "placeholder": "/* Example:\n.step__footer__continue-btn {\n    background: #your-color;\n}\n*/"
-      }
-    ]
-  },
-  {
     "name": "t:settings_schema.cart.name",
     "settings": [
       {
