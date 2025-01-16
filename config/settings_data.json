@@ -393,6 +393,8 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      "header[role=\"banner\"] {border: none; background: red !important;}"
+    ]
   }
 }
